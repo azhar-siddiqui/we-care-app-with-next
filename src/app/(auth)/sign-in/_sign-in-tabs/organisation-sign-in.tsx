@@ -1,7 +1,5 @@
-import LoginWithUserId from "./_components/login-with-userId";
-
 const OrganisationSignIn = () => {
-  return <LoginWithUserId LoginInType="Organisation" />;
+  return <>OrganisationSignIn</>;
 };
 
 export default OrganisationSignIn;

@@ -1,7 +1,5 @@
-import LoginWithUserId from "./_components/login-with-userId";
-
 const B2BSignIn = () => {
-  return <LoginWithUserId LoginInType="B2B" />;
+  return <>B2BSignIn</>;
 };
 
 export default B2BSignIn;

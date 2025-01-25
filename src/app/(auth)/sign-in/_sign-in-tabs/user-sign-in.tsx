@@ -1,7 +1,7 @@
-import SignInWithNumber from "./_components/login-with-no";
+import React from "react";
 
 const UserSignIn = () => {
-  return <SignInWithNumber signInType="User" />;
+  return <div>UserSignIn</div>;
 };
 
 export default UserSignIn;

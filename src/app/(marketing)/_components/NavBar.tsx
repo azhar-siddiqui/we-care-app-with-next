@@ -3,8 +3,10 @@ import * as React from "react";
 
 import { BrandLogo } from "@/components/common/BrandLogo";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Menu } from "lucide-react";
 import Link from "next/link";
+
+// import MobileNavBar from "./MobileNavBar";
 
 const NavBar = () => {
   const headerRef = React.useRef<HTMLDivElement>(null);
@@ -52,17 +54,22 @@ const NavBar = () => {
             <BrandLogo />
           </Link>
           <div></div>
-          <div className="flex items-center gap-4">
-            <Button
-              variant="ghost"
-              className="uppercase text-xs font-semibold leading-tight hover:bg-transparent"
-            >
-              Login
-            </Button>
+          <div className="hidden md:flex gap-4">
+            <Link href="/sign-in">
+              <Button
+                variant="ghost"
+                className="uppercase text-xs font-semibold leading-tight hover:bg-transparent"
+              >
+                Login
+              </Button>
+            </Link>
             <Button className="uppercase px-6 text-xs font-semibold">
               Start Free Trial
             </Button>
           </div>
+          <Button variant="ghost" className="hover:bg-transparent md:hidden">
+            <Menu className="size-4" />
+          </Button>
         </nav>
       </header>
     </>

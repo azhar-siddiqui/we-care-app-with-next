@@ -1,7 +1,5 @@
-import SignInWithNumber from "./_components/login-with-no";
-
 const AdminSignIn = () => {
-  return <SignInWithNumber signInType="Admin" />;
+  return <>Admin SignIn</>;
 };
 
 export default AdminSignIn;

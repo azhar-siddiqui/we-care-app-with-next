@@ -2,8 +2,9 @@
 
 import { z } from "zod";
 
-import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
+
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
 import Link from "next/link";
@@ -33,24 +34,7 @@ import {
   Phone,
   UserRound,
 } from "lucide-react";
-
-const signUpFormSchema = () => {
-  return z.object({
-    labName: z.string().min(2, "Lab name is required").max(50),
-    email: z
-      .string()
-      .email({ message: "Please enter a valid email address" })
-      .nonempty({ message: "Email is required" }),
-    ownerName: z.string().min(2, { message: "Owner name is required" }),
-    contactNo: z
-      .string()
-      .length(10, { message: "Contact number must be exactly 10 digits" })
-      .regex(/^\d{10}$/, {
-        message: "Contact number must contain only digits",
-      }),
-    patientCount: z.string(),
-  });
-};
+import { signUpFormSchema } from "@/lib/validation";
 
 interface FormType {
   type?: string;
@@ -69,7 +53,7 @@ const SignUp = ({ type = "Sign Up" }: FormType) => {
       email: "",
       ownerName: "",
       contactNo: "",
-      patientCount: "",
+      patientCount: undefined,
     },
   });
 
@@ -176,6 +160,8 @@ const SignUp = ({ type = "Sign Up" }: FormType) => {
                   <SelectItem value="30-50">30-50</SelectItem>
                   <SelectItem value="50-100">50-100</SelectItem>
                   <SelectItem value="100-200">100-200</SelectItem>
+                  <SelectItem value="200-500">200-500</SelectItem>
+                  <SelectItem value="500+">500+</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />
